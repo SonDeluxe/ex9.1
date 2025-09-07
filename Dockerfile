@@ -14,7 +14,7 @@ RUN sed -i 's/port="8005"/port="-1"/' /usr/local/tomcat/conf/server.xml
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy file .war từ stage 1 vào thư mục webapps của Tomcat ở stage 2
-COPY --from=build /app/target/web3-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=build /app/target/ex9_1-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
 # Mở port 8080 để có thể truy cập ứng dụng từ bên ngoài container
 EXPOSE 8080
